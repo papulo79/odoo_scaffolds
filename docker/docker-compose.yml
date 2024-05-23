@@ -1,0 +1,52 @@
+version: '3'
+services:
+  odoo16:
+    build: .
+    networks:
+      - net-odoo16
+    container_name: dock-odoo16
+    depends_on:
+      - db16
+    ports:
+      - "8016:8069"
+      - "3016:3000"
+
+    command: >
+      /usr/bin/python3 -m debugpy --listen 0.0.0.0:3000 /usr/bin/odoo
+      -d db-test
+      -u new_module
+      --db_user=odoo
+      --db_host=db16
+      --db_password=odoo
+      --load-language=es_ES
+      --dev=all
+      --config=/mnt/environment/confs/odoo.conf
+      
+    volumes:
+      - "odoo_data16:/opt/odoo/odoo-data"
+      - "data_dir16:/var/lib/odoo"
+      - ./environment:/mnt/environment
+      - ./../code:/mnt/code
+
+  db16:
+    image: postgres:15
+    networks:
+      - net-odoo16
+    container_name: postgresqlv16
+    volumes:
+      - ./volumes/database:/var/lib/postgresql/data
+    ports:
+      - 5416:5432
+
+    environment:
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - POSTGRES_DB=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+volumes:
+  odoo_data16:
+  data_dir16:
+
+networks:
+  net-odoo16:

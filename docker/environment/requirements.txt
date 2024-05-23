@@ -1,0 +1,17 @@
+debugpy
+cachetools
+validators
+random_user_agent
+
+astor
+boto3
+cachetools
+html2text
+openpyxl
+phonenumbers
+psycopg2
+PyYAML
+pycountry
+schwifty
+unidecode
+xmlsig

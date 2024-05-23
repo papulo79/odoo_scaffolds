@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Odoo docker debug 16",
+            "type": "python",
+            "request": "attach",
+            "port": 3016,
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}/code",
+                    "remoteRoot": "/mnt/code"
+                },
+                {
+                    "localRoot": "${workspaceFolder}/docker/environment",
+                    "remoteRoot": "/mnt/environment"
+                }
+            ],
+            "logToFile": true,
+        },
+    ]
+}
