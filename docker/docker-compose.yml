@@ -19,6 +19,7 @@ services:
       --db_host=db16
       --db_password=odoo
       --load-language=es_ES
+      --dev=all
       --config=/mnt/environment/confs/odoo.conf
       
     volumes:
