@@ -45,3 +45,26 @@ DB_PORT=5417
 
 ![compose-up](static/images/docker-compose_up.gif)
 
+5. Accede a la instancia de Odoo desde la url `localhost:[ODOO_PORT]`
+
+### Ejemplo para odoo 17
+
+http://localhost:8017
+
+User: admin
+Password: admin
+
+![compose-up](static/images/odoo_up.gif)
+
+
+## Preguntas frecuentes
+
+__Al arrancar de nuevo el docker-compose me está dando problemas con los permisos en la carpeta pgdata__
+
+Hay que dar permisos completos a la carpeta volumes del docker.
+
+Como el contenedor se ha creado con el usuario root puede dar problemas de permisos de acceso. 
+
+__Ejemplo en Ubuntu__
+
+- Navegar hasta el directorio volumes y ejecutar `$sudo chmod 777 -R .` 
