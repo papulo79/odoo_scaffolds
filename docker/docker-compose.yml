@@ -11,8 +11,8 @@ services:
       - "${ODOO_DEBUG_PORT}:3000"
     command: >
       /usr/bin/python3 -m debugpy --listen 0.0.0.0:3000 /usr/bin/odoo
-      -d prefhorvisa
-      -u website_custom_contact
+      -d database_name
+      -u new_module
       --db_user=odoo
       --db_host=db_odoo
       --db_password=odoo
