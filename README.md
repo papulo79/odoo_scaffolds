@@ -1,6 +1,6 @@
 # Odoo scaffolds con docker y vscode
 
-## Despliega rápidamente un entorno de desarrollo y depura paso a paso con toda la potencía de debugpy
+## Despliega rápidamente un entorno de desarrollo y depura paso a paso con toda la potencia de debugpy
 
 Plantilla para poder desplegar un odoo en 10 minutos, utilizando docker, con el propósito de poder hacer debug de toda la ejecución.
 Cada desarrollo en su versión o como más te plazca.
