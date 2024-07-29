@@ -13,9 +13,9 @@ services:
       /usr/bin/python3 -m debugpy --listen 0.0.0.0:3000 /usr/bin/odoo
       -d database_name
       -u new_module
-      --db_user=odoo
       --db_host=db_odoo
-      --db_password=odoo
+      --db_user=${POSTGRES_USER}
+      --db_password=${POSTGRES_PASSWORD}
       --load-language=es_ES
       --config=/mnt/environment/confs/odoo.conf
     volumes:
