@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Depurador de Python: Archivo actual",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Odoo docker",
+            "type": "debugpy",
+            "request": "attach",
+            "port": 3017,
+            "host": "localhost",
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}/code",
+                    "remoteRoot": "/mnt/code"
+                },
+                {
+                    "localRoot": "${workspaceFolder}/odoo/addons",
+                    "remoteRoot": "/usr/lib/python3/dist-packages/odoo/addons"
+                },
+            ],
+            "logToFile": true,
+            "justMyCode": false,
+        },
+    ]
+}
