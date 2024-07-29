@@ -9,7 +9,7 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "Odoo docker 17",
+            "name": "Odoo docker",
             "type": "debugpy",
             "request": "attach",
             "port": 3017,
