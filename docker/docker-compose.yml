@@ -19,7 +19,7 @@ services:
       --load-language=es_ES
       --config=/mnt/environment/confs/odoo.conf
     volumes:
-      - "odoo_data:/opt/odoo/odoo-data"
+      - /volumes/filestore:/opt/odoo/odoo-data
       - "data_dir:/var/lib/odoo"
       - ./environment:/mnt/environment
       - ./../code:/mnt/code
@@ -30,7 +30,7 @@ services:
       - net_odoo
     container_name: ${ODOO_DB_CONTAINER_NAME}
     volumes:
-      - ./volumes/database:/var/lib/postgresql/data
+      - ./volumes/data:/var/lib/postgresql/data
     ports:
       - "${DB_PORT}:5432"
     environment:
@@ -40,7 +40,6 @@ services:
       - PGDATA=${PGDATA}
 
 volumes: 
-  odoo_data:
   data_dir:
 
 networks:
