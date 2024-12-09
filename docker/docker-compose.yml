@@ -23,6 +23,8 @@ services:
       - "data_dir:/var/lib/odoo"
       - ./environment:/mnt/environment
       - ./../code:/mnt/code
+    restart: always
+    init: true
 
   db_odoo:
     image: ${DB_IMAGE}
