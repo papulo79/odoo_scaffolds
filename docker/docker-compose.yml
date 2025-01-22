@@ -11,11 +11,7 @@ services:
       - "${ODOO_DEBUG_PORT}:3000"
     command: >
       /usr/bin/python3 -m debugpy --listen 0.0.0.0:3000 /usr/bin/odoo
-      -d database_name
       -u new_module
-      --db_host=db_odoo
-      --db_user=${POSTGRES_USER}
-      --db_password=${POSTGRES_PASSWORD}
       --load-language=es_ES
       --config=/mnt/environment/confs/odoo.conf
     volumes:
